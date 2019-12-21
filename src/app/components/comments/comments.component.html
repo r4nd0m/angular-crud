@@ -1,0 +1,29 @@
+
+<div *ngIf="isLoading" class="comments__message">loading comments...</div>
+
+<div *ngIf="isLoadingError" class="comments__error">unable to load the comments</div>
+
+<div *ngIf="isSaving" class="comments__message">saving comment...</div>
+
+<div *ngIf="isSavingError" class="comments__error">unable to save the comment</div>
+
+<div *ngIf="isDeleting" class="comments__message">deleting comment...</div>
+
+<div *ngIf="isDeletingError" class="comments__error">unable to delete the comment</div>
+
+<mat-card>
+
+    <mat-card-title>All comments for post #{{ postId }}</mat-card-title>
+
+    <mat-card-content *ngIf="!isLoading">
+        <comment
+            *ngFor="let comment of comments"
+            [comment]=comment 
+            (saveComment)="onSaveComment($event)"
+            (deleteComment)="onDeleteComment($event)"
+        ></comment>
+
+        <p *ngIf="comments.length === 0">comments not found</p>
+    </mat-card-content>
+
+</mat-card>

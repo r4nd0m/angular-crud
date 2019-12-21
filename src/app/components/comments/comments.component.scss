@@ -1,0 +1,19 @@
+.comments {
+    &__error,
+    &__message {
+        padding: 10px;
+        position: sticky;
+        top: 10px;
+        z-index: 9999;
+    }
+
+    &__error {
+        background-color: salmon;
+        outline: 2px red solid;
+    }
+
+    &__message {
+        background-color: lightgreen;
+        outline: 2px green solid;
+    }
+}

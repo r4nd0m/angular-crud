@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title>All posts</mat-card-title>
+
+    <mat-card-content *ngIf="!isLoading">
+        <post *ngFor="let post of posts" [post]=post></post>
+    </mat-card-content>
+    
+    <div *ngIf="isLoading">loading posts...</div>
+    
+    <div *ngIf="isError">unable to load the posts</div>
+</mat-card>

@@ -1,0 +1,32 @@
+<mat-card class="comment">
+    <button
+        mat-raised-button
+        color="warn"
+        (click)="onDeleteComment()"
+    >Delete comment</button>
+
+    <p class="comment__row">postId: {{ comment.postId }}</p>
+    <mat-divider></mat-divider>
+    <p class="comment__row">id: {{ comment.id }}</p>
+    <mat-divider></mat-divider>
+    <p class="comment__row">name: {{ comment.name }}</p>
+    <mat-divider></mat-divider>
+    <p class="comment__row">body:</p>
+    <p *ngIf="!isEditable()" class="comment__body comment__row">{{ comment.body }}</p>
+    <div *ngIf="isEditable()">
+        <mat-form-field class="comment__body comment__body--editable">
+            <textarea 
+                matInput 
+                [ngClass]="{'comment__body--dirty': isDirty(), 'comment__body--invalid': !isValid()}"
+                [(ngModel)]="comment.body" 
+            ></textarea>
+        </mat-form-field>
+
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="onSaveComment()"
+            [disabled]="!isSaveable()"
+        >Save changes</button>
+    </div>
+</mat-card>

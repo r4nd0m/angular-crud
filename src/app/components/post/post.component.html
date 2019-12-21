@@ -1,0 +1,11 @@
+<mat-card class="post">
+    <p class="post__row">userId: {{ post.userId }}</p>
+    <mat-divider></mat-divider>
+    <p class="post__row">id: {{ post.id }}</p>
+    <mat-divider></mat-divider>
+    <p class="post__row">title: {{ post.title }}</p>
+    <mat-divider></mat-divider>
+    <p class="post__row">body: #{{ post.body }}</p>
+    <mat-divider></mat-divider>
+    <p class="post__row"><a href="/comments/{{ post.id }}">show comments</a></p>
+</mat-card>

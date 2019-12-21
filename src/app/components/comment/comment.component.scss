@@ -1,0 +1,23 @@
+.comment {
+  margin: 10px;
+  padding: 10px;
+
+  &__row {
+    padding: 10px;
+  }
+
+  &__body {
+    &--dirty {
+      text-decoration: underline;
+    }
+
+    &--editable {
+      min-height: 100px;
+      width: 100%;
+    }
+
+    &--invalid {
+      outline: 2px red solid;
+    }
+  }
+}
