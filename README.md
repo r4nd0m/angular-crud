@@ -1,4 +1,4 @@
-# NgTest
+# angular-crud
 
 Simple CRUD app using angular and REST API
 
